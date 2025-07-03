@@ -16,7 +16,7 @@ ASMFLAGS = -f elf32
 # Source files
 BOOT_SRC = boot.asm
 KERNEL_ASM = kernel.asm
-KERNEL_C = ../kernel/kernel.c ../kernel/kprint.c ../kernel/terminal.c ../kernel/memory_map.c
+KERNEL_C = ../kernel/kernel.c ../kernel/kprint.c ../kernel/terminal.c
 
 # Output files
 BOOT_BIN = $(BIN_DIR)/boot.bin
@@ -70,7 +70,7 @@ run: $(DISK_IMG)
 
 # Run with GDB debug info
 debug: $(DISK_IMG)
-	qemu-system-i386 -drive format=raw,file=$(DISK_IMG) -vnc :0 -s -S
+	qemu-system-i386 -drive format=raw,file=$(DISK_IMG) -s -S
 
 # Edit source files
 boot:
